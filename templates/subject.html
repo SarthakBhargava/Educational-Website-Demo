@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<br><br><br><br><br><br><br><br><br><br>
+<h1>{{name}}'s Topics</h1>
+<br><br>
+{% for i in a %}
+    {% if i.subject.name == name %}
+        <a class="sub" href="{% url 'topic' i.topic_name %}">{{i.topic_name}}</a>
+    {% endif %}
+{% endfor %}
+
+
+{% endblock content %}

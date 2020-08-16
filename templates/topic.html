@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% load embed_video_tags %}
+
+{% load static %}
+{% block content %}
+    <br><br><br><br><br>
+<h1>{{a.topic_name}}</h1>
+    {% video a.i_frame as my_video %}
+        {% video my_video '560x315' %}
+    {% endvideo %}
+<br>
+<div class="details">{{a.details}}</div>
+
+
+{% endblock content %}
